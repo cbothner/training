@@ -1,0 +1,61 @@
+<h1>Listing trainees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Umid</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Dept</th>
+      <th>Experience</th>
+      <th>Referral</th>
+      <th>Interests</th>
+      <th>Statement</th>
+      <th>Stage1</th>
+      <th>Demotape</th>
+      <th>Stage2</th>
+      <th>Apprenticeship freeform1</th>
+      <th>Apprenticeship freeform2</th>
+      <th>Apprenticeship specialty1</th>
+      <th>Apprenticeship specialty2</th>
+      <th>Broadcasters exam</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trainees.each do |trainee| %>
+      <tr>
+        <td><%= trainee.name %></td>
+        <td><%= trainee.umid %></td>
+        <td><%= trainee.phone %></td>
+        <td><%= trainee.email %></td>
+        <td><%= trainee.status %></td>
+        <td><%= trainee.dept %></td>
+        <td><%= trainee.experience %></td>
+        <td><%= trainee.referral %></td>
+        <td><%= trainee.interests %></td>
+        <td><%= trainee.statement %></td>
+        <td><%= trainee.stage1 %></td>
+        <td><%= trainee.demotape %></td>
+        <td><%= trainee.stage2 %></td>
+        <td><%= trainee.apprenticeship_freeform1 %></td>
+        <td><%= trainee.apprenticeship_freeform2 %></td>
+        <td><%= trainee.apprenticeship_specialty1 %></td>
+        <td><%= trainee.apprenticeship_specialty2 %></td>
+        <td><%= trainee.broadcasters_exam %></td>
+        <td><%= link_to 'Show', trainee %></td>
+        <td><%= link_to 'Edit', edit_trainee_path(trainee) %></td>
+        <td><%= link_to 'Destroy', trainee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trainee', new_trainee_path %>

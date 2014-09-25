@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  umid: MyText
+  phone: MyText
+  email: MyText
+  status: MyText
+  dept: MyText
+  experience: MyText
+  referral: MyText
+  interests: MyText
+  statement: MyText
+  stage1: MyText
+  demotape: MyText
+  stage2: MyText
+  apprenticeship_freeform1: MyText
+  apprenticeship_freeform2: MyText
+  apprenticeship_specialty1: MyText
+  apprenticeship_specialty2: MyText
+  broadcasters_exam: MyText
+
+two:
+  name: MyText
+  umid: MyText
+  phone: MyText
+  email: MyText
+  status: MyText
+  dept: MyText
+  experience: MyText
+  referral: MyText
+  interests: MyText
+  statement: MyText
+  stage1: MyText
+  demotape: MyText
+  stage2: MyText
+  apprenticeship_freeform1: MyText
+  apprenticeship_freeform2: MyText
+  apprenticeship_specialty1: MyText
+  apprenticeship_specialty2: MyText
+  broadcasters_exam: MyText

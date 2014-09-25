@@ -1,0 +1,41 @@
+<h1>Listing trainees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Name</th>
+      <th>UMID</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Dept</th>
+      <th>Experience</th>
+      <th>Referral</th>
+      <th>Interests</th>
+      <th>Personal Statement</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trainees.each do |trainee| %>
+      <tr>
+        <td><%= trainee.created_at %></td>
+        <td><%= trainee.name %></td>
+        <td><%= trainee.umid %></td>
+        <td><%= trainee.phone %></td>
+        <td><%= trainee.email %></td>
+        <td><%= trainee.status %></td>
+        <td><%= trainee.dept %></td>
+        <td><%= trainee.experience %></td>
+        <td><%= trainee.referral %></td>
+        <td><%= trainee.interests %></td>
+        <td><%= trainee.statement %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trainee', new_trainee_path %>
