@@ -4,4 +4,6 @@ Training::Application.routes.draw do
       get 'coordinator'
     end
   end
+
+  root :to => 'trainees#new'
 end

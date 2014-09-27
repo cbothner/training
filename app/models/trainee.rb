@@ -6,6 +6,15 @@ class Trainee < ActiveRecord::Base
     x.validates :statement, presence: true
   end
 
+  def self.to_contact(days_after)
+    all.select{ |t| t.age >= days_after }
+      .reject{ |t| !t.most_recent_email.nil? && t.most_recent_email >= days_after }
+  end
+
+  def age
+    (Date.today - created_at.to_date).to_i
+  end
+
   def community?
     :status == "community"
   end
