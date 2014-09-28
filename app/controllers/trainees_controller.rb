@@ -4,11 +4,11 @@ class TraineesController < ApplicationController
   # GET /trainees
   # GET /trainees.json
   def index
-    @trainees = Trainee.all.sort_by(&:created_at)
+    @trainees = Trainee.all.sort_by(&:created_at).reverse
   end
 
   def coordinator
-    @trainees = Trainee.all.sort_by(&:created_at)
+    @trainees = Trainee.all.sort_by(&:created_at).reverse
   end
 
   # GET /trainees/1

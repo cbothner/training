@@ -5,7 +5,13 @@
 $(document).ready ->
   $(document).on("click", ".interest_link", ->
     interests = $("#trainee_interests").val()
-    $("#trainee_interests").val(interests + " " + $(this).attr('data-interest'))
+    interests += ", " if interests != ''
+    $("#trainee_interests").val(interests + $(this).attr('data-interest'))
+  )
+
+  $(document).on("change", "#trainee_status", ->
+    if $(this).val() == "community"
+      $(".hidden").removeClass("hidden")
   )
 
 jQuery ->

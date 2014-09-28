@@ -15,7 +15,11 @@ class Trainee < ActiveRecord::Base
     (Date.today - created_at.to_date).to_i
   end
 
+  def um_id
+    umid[0..3]+" "+umid[4..8]
+  end
+
   def community?
-    :status == "community"
+    status == "community"
   end
 end

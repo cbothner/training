@@ -1,0 +1,21 @@
+%h1 WCBN Training Database
+%h3 Trainee Details
+
+#notice=notice
+.trainee
+  .small.grey="#{@trainee.created_at.to_date} — #{@trainee.most_recent_email.to_i} day email sent"
+  .big.name.inline=@trainee.name
+  .inline=@trainee.dept
+  .inline=@trainee.status.capitalize
+  .grey.inline=' — '+@trainee.um_id
+  %br
+  .inline=@trainee.phone
+  .inline=' — '+@trainee.email
+  .small='Interests: '+@trainee.interests
+  .small.grey='Found out about WCBN through '+@trainee.referral
+  .small="Radio Experience: #{@trainee.experience}"
+  .small.grey=('Personal Statement: '+@trainee.statement) unless @trainee.statement.empty?
+
+= link_to 'Edit', edit_trainee_path(@trainee)
+|
+= link_to 'Back', trainees_path
