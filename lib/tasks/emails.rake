@@ -9,7 +9,7 @@ namespace :emails do
     # Sort the intervals longest to smallest to reduce double mailings in case cron fails
     # to run and we have a backlog.
     EMAILS = [
-      {message: :year, subject: "Happy Mic Day! It's been a year since you joined  WCBN!",
+      {message: :year, subject: "Happy Mic Day! It's been a year since you joined WCBN!",
         days_after: 365}, 
       {message: :month, subject: "How are you doing after a month at WCBN?", days_after: 30}, 
       {message: :week, subject: "How was your first week with WCBN?", days_after: 7}, 

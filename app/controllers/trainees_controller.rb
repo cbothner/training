@@ -23,6 +23,7 @@ class TraineesController < ApplicationController
 
   # GET /trainees/1/edit
   def edit
+    @trainers_view = true
   end
 
   # POST /trainees
