@@ -10,10 +10,11 @@ namespace :emails do
     # to run and we have a backlog.
     EMAILS = [
       {message: :year, subject: "Happy Mic Day! It's been a year since you joined WCBN!",
-        days_after: 365}, 
-      {message: :month, subject: "How are you doing after a month at WCBN?", days_after: 30}, 
-      {message: :week, subject: "How was your first week with WCBN?", days_after: 7}, 
-      {message: :welcome, subject: "Welcome to WCBN", days_after: 1}, 
+        days_after: 365},
+      {message: :three, subject: "Three months since you dirst dropped by WCBN: what's up?",
+        days_after: 90},
+      {message: :month, subject: "How was your first month with WCBN?", days_after: 30},
+      {message: :welcome, subject: "Welcome to WCBN! Step-by-step to 'On Air!'", days_after: 4},
     ]
     EMAILS.each do |i|
       Trainee.to_contact( i[:days_after] ).each do |t|

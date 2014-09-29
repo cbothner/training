@@ -1,5 +1,13 @@
-Dear <%= @trainee.name %>,
+Dear <%= @trainee.name.split(' ')[0] %>,
 
-Welcome to WCBN!
+Welcome to WCBN!  Thanks for coming in on Sunday.  We're excited to have you 
+join the station.
 
-This is an automated email from our Training Bot.
+Here's just a quick refresher on the next steps for you:
+
+<%=render 'steps' %>
+
+See you again soon,
+
+-- 
+WCBN Training
