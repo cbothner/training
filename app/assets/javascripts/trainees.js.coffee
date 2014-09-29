@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  $(document).on("click", ".interest_link", ->
+  $(document).on("click tap", ".interest_link", ->
     interests = $("#trainee_interests").val()
     interests += ", " if interests != ''
     $("#trainee_interests").val(interests + $(this).attr('data-interest'))

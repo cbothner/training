@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :umid, "UMID "%><br>
-    <%= f.text_field :umid %>
+    <%= f.number_field :umid %>
   </div>
   <div class="field">
     <%= f.label :phone %><br>
@@ -48,12 +48,12 @@
     What aspect of radio are you most interested in doing? Choose as many as apply.</br>
     <div class="interest_links">
       Broadcasting: 
-      <%= (%w(music talkshow sports).map{|i| interest_link(i) }*"; ").html_safe %>
+      <%= (%w(freeform/music talkshow sports).map{|i| interest_link(i) }*"").html_safe %>
       <br />
       Off-Air Work:
       <%= (%w(development engineering events social-media 
            website carts publicity music-review library)
-        .map{|i| interest_link(i) }*"; ").html_safe %>
+        .map{|i| interest_link(i) }*"").html_safe %>
     </div>
     <%= f.text_area :interests %>
   </div>

@@ -1,4 +1,5 @@
 label {
+  font-family: 'Roboto Slab', serif;
   font-weight: bold;
 }
 
@@ -8,16 +9,13 @@ input, textarea, select {
   margin-bottom: 0.8em;
 }
 
-input[type="text"],
-input[type="phone"],
-textarea {
-  background-color: #E8EFFF;
-}
-
 textarea{
   height: 3em;
 }
 
+.interest_link {
+  width: auto;
+}
 
 .trainee {
   padding: 0.5em 0;
@@ -29,6 +27,7 @@ textarea{
   font-size: 10pt; 
 }
 .name{
+  font-family: 'Roboto Slab', serif;
   font-size: 15pt !important;
   font-weight: bold;
   padding-right: 0.5em;
