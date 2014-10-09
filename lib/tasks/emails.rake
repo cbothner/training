@@ -1,4 +1,11 @@
 namespace :emails do
+  # This constant defines which emails will be sent at which intervals.
+  # - The message must be a :symbol that corresponds to one or more templates in 
+  #   app/views/trainee_mailer.
+  # - The subject will form the subject of the email.
+  # - The intervals represent the number of days after their initial sign-up.
+  # Sort the intervals longest to smallest to reduce double mailings in case cron fails
+  # to run and we have a backlog.
   EMAILS = [
     #{message: :year, subject: "Happy Mic Day! It's been a year since you joined WCBN!",
       #days_after: 365},
@@ -10,13 +17,6 @@ namespace :emails do
   ]
   desc "Send emails to trainees who need them. This task should be run once daily."
   task send: :environment do
-    # This constant defines which emails will be sent at which intervals.
-    # - The message must be a :symbol that corresponds to one or more templates in 
-    #   app/views/trainee_mailer.
-    # - The subject will form the subject of the email.
-    # - The intervals represent the number of days after their initial sign-up.
-    # Sort the intervals longest to smallest to reduce double mailings in case cron fails
-    # to run and we have a backlog.
     EMAILS.each do |i|
       Trainee.to_contact( i[:days_after] ).each do |t|
         TraineeMailer.scheduled( t, i ).deliver
