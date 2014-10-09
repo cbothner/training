@@ -5,7 +5,8 @@ namespace :emails do
     {message: :three, subject: "Three months since you first dropped by WCBN: what's up?",
       days_after: 90},
     {message: :month, subject: "How was your first month with WCBN?", days_after: 30},
-    {message: :welcome, subject: "Welcome to WCBN! Step-by-step to 'On Air!'", days_after: 4},
+    {message: :week, subject: "WCBN Demo Tape Tips", days_after: 7},
+    {message: :welcome, subject: "Welcome to WCBN! Step-by-step to 'On Air!'", days_after: 1},
   ]
   desc "Send emails to trainees who need them. This task should be run once daily."
   task send: :environment do
