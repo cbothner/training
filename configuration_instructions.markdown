@@ -32,8 +32,10 @@ template for a given email, they will send together as a multiformat email.
 Email templates can incorporate partials, snippets used multiple times across many emails, like 
 `_sig.text.erb` which contains the WCBN Training signature.  These partials are incorporated into 
 the email template like this:
+
     <%=render 'sig' %>
-In fact, any ruby code can be evaluated within the <%= %> brackets: functions defined in 
+
+In fact, any ruby code can be evaluated within the `<%= %>` brackets: functions defined in 
 `app/helpers/office_hours_helper.rb` are accessable in the email templates, such as 
 `linewise_office_hours` and `short_office_hours`, which generate lists of our office hours separated 
 on on different lines, or compressed forms separated by commas.
@@ -41,9 +43,11 @@ on on different lines, or compressed forms separated by commas.
 ## Change the office hours.
 The file `app/helpers/office_hours_helper.rb` defines a constant `OFFICE_HOURS`, a list of hashes as 
 follows:
+
     OFFICE_HOURS = [
       {weekday: "Thursday", start: "1PM", staffer: "Cameron"},
     ]
+    
  - `weekday` is a capitalized name of the day of the week a given volunteer's office hours are held.
  - `start` is the time of day the period starts.  Office hours are assumed to be one hour in length.  
    This value can be any reasonable time format: 1:00PM, 13h, 1p, 16:30:00, etc.
