@@ -21,7 +21,7 @@
   .field
     = f.label :email 
     %br
-    = f.text_field :email 
+    = f.email_field :email 
   .field
     = f.label :status 
     %br
@@ -41,18 +41,31 @@
   .field
     = f.label :interests 
     %br
-    What aspect of radio are you most interested in doing? Choose as many as apply.
-    .interest_links
-      Broadcasting: 
-      = (%w(freeform/music talkshow sports).map{|i| interest_link(i) }*"").html_safe 
+    %p.instructions
+      What aspect of radio are you most interested in doing? Choose as many as apply.
+    .instructions
+      = interest_links ["Freeform Music Show", "Talkshow", "Sports Radio"]
       %br
-      Off-Air Work:
-      = (%w(development engineering events social-media website carts publicity music-review library).map{|i| interest_link(i) }*"").html_safe 
+      = interest_links ["Development", "Engineering", "Events", "Publicity", "Music Review"]
+      %br
+      = interest_links ["Social Media", "Website", "Carts", "Archiving/Library Management"]
     = f.text_area :interests 
   .field.hidden
-    = f.label :statement 
+    = f.label :statement, "Community Volunteers' Personal Statement"
     %br
-    = f.text_area :statement 
+    %p.instructions
+      WCBN is a student-run, and primarily student-staffed station.  The role of
+      community voluteers on the air is limited to an educational and/or
+      advisory role, meaning that community volunteers must have something
+      concrete to give the station, such as exceptional music knowledge,
+      technical expertise, or previous radio experience.  Please explain why
+      you'd like to join WCBN, what you propose to do here, and in what ways you
+      would like to become involved.  What do you have to offer WCBN on-air and
+      off?  Please know that DJs are required to match their on-air hours with
+      off-air work at the station.  Do you have the time for this kind of
+      commitment?  What would your contribution be?
+    %br
+    = f.text_area :statement, class: "tall"
 
   - if @trainers_view 
     .field
@@ -88,4 +101,4 @@
       %br
       = f.text_area :broadcasters_exam 
   .actions
-    = f.submit 
+    = f.submit "Submit"

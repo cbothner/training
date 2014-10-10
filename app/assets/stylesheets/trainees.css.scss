@@ -12,6 +12,14 @@ input, textarea, select {
 textarea{
   height: 3em;
 }
+textarea.tall{
+  height: 10em;
+}
+
+.instructions{
+  font-size: 90%;
+  margin: 0;
+}
 
 .interest_link {
   width: auto;
