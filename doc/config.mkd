@@ -61,3 +61,5 @@ a list of hashes as follows:
  - `staffer` is the name of the WCBN member who will be in the office.  This
    name is only included in the linewise display of office hours, but is
    included to humanize the situation, and foster a sense of community.
+The hours will be displayed in the order they are listed in this contant:
+sort them by day of the week.
