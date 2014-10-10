@@ -3,6 +3,10 @@ module OfficeHoursHelper
 
   OFFICE_HOURS = [
     {weekday: "Thursday", start: "1PM", staffer: "Cameron"},
+    {weekday: "Wednesday", start: "7PM", staffer: "Karl"},
+    {weekday: "Friday", start: "2PM", staffer: "Kristin"},
+    {weekday: "Wednesday", start: "3PM", staffer: "Kirsten"},
+    {weekday: "Monday", start: "5PM", staffer: "Max"},
   ]
 
   def linewise_office_hours
