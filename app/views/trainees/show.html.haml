@@ -3,7 +3,7 @@
 
 #notice=notice
 .trainee
-  .small.grey="#{@trainee.created_at.to_date} — #{@trainee.most_recent_email.to_i} day email sent"
+  .small.grey="#{@trainee.created_at.to_date} — #{@trainee.sent_email}"
   .big.name.inline=@trainee.name
   .inline=@trainee.dept
   .inline=@trainee.status.capitalize
