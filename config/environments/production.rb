@@ -67,12 +67,12 @@ Training::Application.configure do
 
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  domain:               'example.com',
-  user_name:            '<username>',
-  password:             '<password>',
-  authentication:       'plain',
+  address: 'smtp.gmail.com',
+  port: 587,
+  domain: 'example.com',
+  user_name: ENV['gmail_address'],
+  password: ENV['gmail_password'],
+  authentication: 'plain',
   enable_starttls_auto: true  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
