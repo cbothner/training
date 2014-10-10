@@ -29,4 +29,12 @@ class Trainee < ActiveRecord::Base
   def community?
     status == "community"
   end
+
+  def sent_email
+    if most_recent_email.to_i == 0
+      "Never emailed."
+    else
+      "#{most_recent_email.to_i}-day email sent."
+    end
+  end
 end
