@@ -1,4 +1,5 @@
 class TraineesController < ApplicationController
+  before_filter :authenticate, except: :new
   before_action :set_trainee, only: [:show, :edit, :update, :destroy]
 
   # GET /trainees
@@ -66,6 +67,11 @@ class TraineesController < ApplicationController
     end
   end
 
+  def authenticate
+    authenticate_or_request_with_http_basic('Training Database') do |username, password|
+      username == ENV['http_basic_username'] && password == ENV['http_basic_password']
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trainee
