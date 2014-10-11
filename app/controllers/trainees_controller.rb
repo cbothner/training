@@ -1,5 +1,5 @@
 class TraineesController < ApplicationController
-  before_filter :authenticate, except: :new
+  before_filter :authenticate, except: [:new, :create]
   before_action :set_trainee, only: [:show, :edit, :update, :destroy]
 
   # GET /trainees
@@ -34,7 +34,8 @@ class TraineesController < ApplicationController
 
     respond_to do |format|
       if @trainee.save
-        format.html { redirect_to @trainee, notice: 'Trainee was successfully created.' }
+        flash[:notice] = 'Got it! Welcome to WCBN'
+        format.html { redirect_to action: 'new' }
         format.json { render action: 'show', status: :created, location: @trainee }
       else
         format.html { render action: 'new' }
