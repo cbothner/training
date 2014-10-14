@@ -8,7 +8,7 @@
     .small.grey="#{trainee.created_at.to_date} — #{trainee.sent_email}"
     .big.name.inline=link_to trainee.name, trainee
     .inline=trainee.dept
-    .inline=trainee.status.capitalize
+    .inline=trainee.status_capitalize
     .grey.inline=' — '+trainee.um_id
     %br
     .inline=trainee.phone

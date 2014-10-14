@@ -37,4 +37,9 @@ class Trainee < ActiveRecord::Base
       "#{most_recent_email.to_i}-day email sent."
     end
   end
+
+  def status_capitalize
+    return status.capitalize unless status == "community"
+    "Community Member"
+  end
 end
