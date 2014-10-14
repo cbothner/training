@@ -1,12 +1,12 @@
 class Trainee < ActiveRecord::Base
   validates :name, :phone, :email, :status, presence: true
-  validates :umid, numericality: { only_integer: true }, length: { is: 8 }
   validates :status, inclusion: { in: %w(student faculty alumnus community) }
   with_options if: :community? do |x|
     x.validates :statement, presence: true
   end
   with_options if: :has_umid? do |x|
     x.validates :umid, presence: true
+    x.validates :umid, numericality: { only_integer: true }, length: { is: 8 }
   end
 
   def self.to_contact(days_after)
