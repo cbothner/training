@@ -7,4 +7,13 @@ module TraineesHelper
   def interest_links(list)
     list.map{ |i| interest_link i }.join.html_safe
   end
+
+  def approval_button(field)
+    ('<input type="button" class="approval_button" data-field="'+field+
+     '" data-date="'+"#{Date.today.to_date}"+'" value="Approve" />').html_safe
+  end
+
+  def grey(text)
+    ('<span class="grey">'+text+'</span>').html_safe
+  end
 end

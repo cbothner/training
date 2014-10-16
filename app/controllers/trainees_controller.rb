@@ -31,6 +31,7 @@ class TraineesController < ApplicationController
   # POST /trainees.json
   def create
     @trainee = Trainee.new(trainee_params)
+    @trainee.stage1 = "#{Date.today.to_date}"
 
     respond_to do |format|
       if @trainee.save

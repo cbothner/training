@@ -14,7 +14,14 @@
   .small='Interests: '+@trainee.interests
   .small.grey='Found out about WCBN through '+@trainee.referral
   .small="Radio Experience: #{@trainee.experience}"
-  .small.grey=('Personal Statement: '+@trainee.statement) unless @trainee.statement.empty?
+  .small.grey=('Personal Statement: '+@trainee.statement) unless @trainee.statement.blank?
+  .small.padtop=(grey('Demo Tape Approval: ')+@trainee.demotape) unless @trainee.demotape.blank?
+  .small=(grey('Stage Two Training: ')+@trainee.stage2) unless @trainee.stage2.blank?
+  .small=(grey('Freeform Apprenticeship No. 1: ')+@trainee.apprenticeship_freeform1) unless @trainee.apprenticeship_freeform1.blank?
+  .small=(grey('Freeform Apprenticeship No. 2: ')+@trainee.apprenticeship_freeform2) unless @trainee.apprenticeship_freeform2.blank?
+  .small=(grey('Specialty Apprenticeship No. 1: ')+@trainee.apprenticeship_specialty1) unless @trainee.apprenticeship_specialty1.blank?
+  .small=(grey('Specialty Apprenticeship No. 2: ')+@trainee.apprenticeship_specialty2) unless @trainee.apprenticeship_specialty2.blank?
+  .small=(grey('Broadcasters Exam Passed: ')+@trainee.broadcasters_exam) unless @trainee.broadcasters_exam.blank?
 
 = link_to 'Edit', edit_trainee_path(@trainee)
 |

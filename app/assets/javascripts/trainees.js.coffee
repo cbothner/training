@@ -9,6 +9,14 @@ $(document).ready ->
     $("#trainee_interests").val(interests + $(this).attr('data-interest'))
   )
 
+  $(document).on("click tap", ".approval_button", ->
+    fieldname = $(this).attr('data-field')
+    field = $("#trainee_"+fieldname)
+    field.focus()
+    field.val($(this).attr('data-date')+' ')
+
+  )
+
   $(document).on("change", "#trainee_status", ->
     if $(this).val() == "community"
       $(".hidden").removeClass("hidden")

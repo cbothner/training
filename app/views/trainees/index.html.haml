@@ -6,6 +6,7 @@
 -@trainees.each do |trainee|
   .trainee
     .small.grey="#{trainee.created_at.to_date} — #{trainee.sent_email}"
+    .inline.shift_up="&#9989;".html_safe unless trainee.demotape.blank?
     .big.name.inline=link_to trainee.name, trainee
     .inline=trainee.dept
     .inline=trainee.status_capitalize

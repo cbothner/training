@@ -21,8 +21,17 @@ textarea.tall{
   margin: 0;
 }
 
-.interest_link {
+.interest_link{
   width: auto;
+}
+.shift_up{
+  position: relative;
+  top:-0.1em;
+}
+.approval_button{
+  width: auto;
+  position: relative;
+  top:-0.2em;
 }
 
 .trainee {
@@ -34,6 +43,7 @@ textarea.tall{
 .small{
   font-size: 10pt; 
 }
+.padtop{ padding-top:0.5em; }
 .name{
   font-family: 'Roboto Slab', serif;
   font-size: 15pt !important;

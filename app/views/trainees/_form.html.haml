@@ -73,36 +73,43 @@
 
   - if @trainers_view 
     .field
-      = f.label :stage1 
+      = f.label :stage1, 'Stage One Training'
       %br
-      = f.text_area :stage1 
+      = f.text_field :stage1 
     .field
-      = f.label :demotape 
+      = f.label :demotape, 'Demo Tape Approval'
+      = approval_button 'demotape'
       %br
-      = f.text_area :demotape 
+      = f.text_field :demotape 
     .field
-      = f.label :stage2 
+      = f.label :stage2, 'Stage Two Training'
+      = approval_button 'stage2'
       %br
-      = f.text_area :stage2 
+      = f.text_field :stage2 
     .field
-      = f.label :apprenticeship_freeform1 
+      = f.label :apprenticeship_freeform1, 'Freeform Apprenticeship No. 1'
+      = approval_button 'apprenticeship_freeform1'
       %br
-      = f.text_area :apprenticeship_freeform1 
+      = f.text_field :apprenticeship_freeform1 
     .field
-      = f.label :apprenticeship_freeform2 
+      = f.label :apprenticeship_freeform2, 'Freeform Apprenticeship No. 2'
+      = approval_button 'apprenticeship_freeform2'
       %br
-      = f.text_area :apprenticeship_freeform2 
+      = f.text_field :apprenticeship_freeform2 
     .field
-      = f.label :apprenticeship_specialty1 
+      = f.label :apprenticeship_specialty1, 'Specialty Apprenticeship No. 1'
+      = approval_button 'apprenticeship_specialty1'
       %br
-      = f.text_area :apprenticeship_specialty1 
+      = f.text_field :apprenticeship_specialty1 
     .field
-      = f.label :apprenticeship_specialty2 
+      = f.label :apprenticeship_specialty2, 'Specialty Apprenticeship No. 2'
+      = approval_button 'apprenticeship_specialty2'
       %br
-      = f.text_area :apprenticeship_specialty2 
+      = f.text_field :apprenticeship_specialty2 
     .field
-      = f.label :broadcasters_exam 
+      = f.label :broadcasters_exam, 'Broadcaster\'s Exam Passed'
+      = approval_button 'broadcasters_exam'
       %br
-      = f.text_area :broadcasters_exam 
+      = f.text_field :broadcasters_exam 
   .actions
     = f.submit "Submit"
