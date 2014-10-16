@@ -25,8 +25,11 @@
   .field
     = f.label :status 
     %br
-    = f.select :status, options_for_select(%w(student faculty alumnus community).map {|a| [a == 'community' ? 'Community Member' : a.capitalize,
-      a]}, @trainee.status) 
+    = f.select :status, options_for_select([['U-M Student', 'student'],
+        ['U-M Faculty or Staff', 'faculty'],
+        ['U-M Alumnus/a', 'alumnus'],
+        ['Community Member', 'community']],
+      @trainee.status) 
   .field
     = f.label :dept, "What school/department, if applicable?" 
     %br
