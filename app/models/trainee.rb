@@ -19,7 +19,8 @@ class Trainee < ActiveRecord::Base
   end
 
   def um_id
-    umid[0..3]+" "+umid[4..8]
+    return umid[0..3]+" "+umid[4..8] unless umid.blank?
+    "No UMID"
   end
 
   def has_umid?
