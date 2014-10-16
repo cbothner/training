@@ -16,4 +16,8 @@ module TraineesHelper
   def grey(text)
     ('<span class="grey">'+text+'</span>').html_safe
   end
+
+  def needs_statement(trainee)
+    trainee.status == 'community' || !trainee.statement.blank?
+  end
 end

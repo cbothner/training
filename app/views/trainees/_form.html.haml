@@ -54,7 +54,7 @@
       %br
       = interest_links ["Social Media", "Website", "Carts", "Archiving/Library Management"]
     = f.text_area :interests 
-  .field.hidden
+  .field{ class: ('hidden' unless needs_statement @trainee) }
     = f.label :statement, "Community Volunteers' Personal Statement"
     %br
     %p.instructions
