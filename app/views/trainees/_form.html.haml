@@ -12,6 +12,8 @@
     =f.text_field :name 
   .field
     =f.label :umid, "UMID Number"
+    %p.instructions
+      If applicable.  If you don't have one, choose "Community Member" as your U-M Affiliation below.
     %br
     =f.number_field :umid 
   .field
@@ -23,7 +25,7 @@
     %br
     = f.email_field :email 
   .field
-    = f.label :status 
+    = f.label :status, "U-M Affiliation"
     %br
     = f.select :status, options_for_select([['U-M Student', 'student'],
         ['U-M Faculty or Staff', 'faculty'],
