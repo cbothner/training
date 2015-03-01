@@ -16,6 +16,12 @@ class Trainee < ActiveRecord::Base
       .reject{ |t| !t.most_recent_email.nil? && t.most_recent_email >= days_after }
   end
 
+  def self.to_mark_shadowed
+    Mentor.where(weekday: Date.today.wday).map do |m| 
+      m.trainees.reject(&:shadowed)
+    end.flatten
+  end
+
   def age
     (Date.today - created_at.to_date).to_i
   end

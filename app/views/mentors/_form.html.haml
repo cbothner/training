@@ -21,7 +21,7 @@
   .field
     = f.label :weekday 
     %br
-    = f.select( :weekday, options_for_select((0..6).map {|i| [Weekdays[i],i] },
+    = f.select( :weekday, options_for_select((0..6).map {|i| [Date::DAYNAMES[i],i] },
                                              @mentor.weekday))
   .field
     = f.label :start 

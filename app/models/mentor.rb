@@ -1,3 +1,4 @@
+require 'date'
 class Mentor < ActiveRecord::Base
   validates :active, :name, :phone, :email, :weekday, :start, :end, presence: true
   validates :weekday, numericality: { only_integer: true,
@@ -26,13 +27,6 @@ class Mentor < ActiveRecord::Base
   end
 
   def slot_string
-    "#{Weekdays[weekday]} from #{start.strftime("%I:%M%p")} to #{self.end.strftime("%I:%M%p")}"
+    "#{Date::DAYNAMES[weekday]} from #{start.strftime("%I:%M%p")} to #{self.end.strftime("%I:%M%p")}"
   end
 end
-
-Weekdays = {
-  'Monday' => 0, 'Tuesday' => 1, 'Wednesday' => 2, 'Thursday' => 3,
-  'Friday' => 4, 'Saturday' => 5, 'Sunday' => 6,
-  0 => 'Monday', 1 => 'Tuesday', 2 => 'Wednesday', 3 => 'Thursday',
-  4 => 'Friday', 5 => 'Saturday', 6 => 'Sunday'
-}
