@@ -1,0 +1,35 @@
+= form_for(@mentor) do |f|
+  -if @mentor.errors.any? 
+    .error_explanation
+      %h2= pluralize(@mentor.errors.count, "error")+"  prohibited this shadow from being saved:"
+      %ul
+        -@mentor.errors.full_messages.each do |msg|
+          %li=msg
+
+  .field
+    =f.label :name 
+    %br
+    =f.text_field :name 
+  .field
+    = f.label :phone 
+    %br
+    = f.phone_field :phone 
+  .field
+    = f.label :email 
+    %br
+    = f.email_field :email 
+  .field
+    = f.label :weekday 
+    %br
+    = f.select( :weekday, options_for_select((0..6).map {|i| [Weekdays[i],i] },
+                                             @mentor.weekday))
+  .field
+    = f.label :start 
+    %br
+    = f.time_field :start 
+  .field
+    = f.label :end 
+    %br
+    = f.time_field :end 
+  .actions
+    = f.submit "Submit"

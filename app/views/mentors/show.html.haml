@@ -1,0 +1,18 @@
+%h1 WCBN Training Database
+%h3 Shadow Details
+
+#notice=notice
+.mentor
+  .small.grey=@mentor.active? ? "Active" : "Disactive"
+  .big.name.inline=@mentor.name
+  %br
+  .grey.inline=@mentor.phone
+  .grey.inline=' — '+@mentor.email
+  %br
+  .inline=@mentor.slot_string
+
+= link_to 'Edit', edit_mentor_path(@mentor)
+|
+= link_to 'Delete', @mentor, method: :delete, data: { confirm: 'Are you sure you wish to delete this record?' }
+|
+= link_to 'Back', mentors_path

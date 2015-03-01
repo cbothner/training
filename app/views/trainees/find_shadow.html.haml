@@ -1,0 +1,10 @@
+%h1 WCBN Training Database
+%h3=@trainee.name
+%h3 Sign Up to Shadow Someone
+
+#notice=notice
+.trainee
+  = form_for(@trainee, url: url_for(action: 'sign_shadow')) do |f|
+    =f.collection_radio_buttons :mentor_id, Mentor.available, :id, :to_s
+    .actions
+      = f.submit "Submit"

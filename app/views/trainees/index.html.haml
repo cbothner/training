@@ -1,13 +1,14 @@
 %h1 WCBN Training Database
 
+%h4= link_to 'Shadows', mentors_path
 %h4= link_to 'New Trainee', new_trainee_path
 
 #notice=notice
 -@trainees.each do |trainee|
   .trainee
     .small.grey="#{trainee.created_at.to_date} — #{trainee.sent_email}"
-    .inline.shift_up="&#9989;".html_safe unless trainee.demotape.blank?
-    .big.name.inline=link_to trainee.name, trainee
+    .inline.shift_up="&#9989;".html_safe unless trainee.demotape.blank? || !trainee.broadcasters_exam.blank?
+    .big.name.inline=link_to trainee.name, trainee, class: ("hilight" unless trainee.broadcasters_exam.blank?)
     .inline=trainee.dept
     .inline=trainee.status_capitalize
     .grey.inline=' — '+trainee.um_id
@@ -15,3 +16,5 @@
     .inline=trainee.phone
     .inline=' — '+trainee.email
     .small.grey='Interests: '+trainee.interests
+    - shadow_link = trainee.mentor ? 'Show shadow' : 'Sign up to shadow'
+    =link_to shadow_link,  action: :find_shadow, id: trainee unless Mentor.available.empty?

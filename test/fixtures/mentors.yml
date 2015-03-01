@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  active: 
+  name: 
+  phone: 
+  email: 
+  weekday: 
+  start: 
+  end: 2015-02-28 12:53:56
+
+two:
+  active: 
+  name: 
+  phone: 
+  email: 
+  weekday: 
+  start: 
+  end: 2015-02-28 12:53:56

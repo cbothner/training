@@ -9,6 +9,8 @@ class Trainee < ActiveRecord::Base
     x.validates :umid, numericality: { only_integer: true }, length: { is: 8 }
   end
 
+  belongs_to :mentor
+
   def self.to_contact(days_after)
     all.select{ |t| t.age >= days_after }
       .reject{ |t| !t.most_recent_email.nil? && t.most_recent_email >= days_after }

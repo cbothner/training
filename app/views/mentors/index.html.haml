@@ -1,0 +1,14 @@
+%h1 WCBN Training: Shadows
+
+%h4= link_to 'Trainees', trainees_path
+%h4= link_to 'New Shadow', new_mentor_path
+
+#notice=notice
+-@mentors.each do |mentor|
+  .mentor
+    .big.name.inline=link_to mentor.name, mentor, class: ("disactive" unless mentor.active)
+    %br
+    .grey.inline=mentor.phone
+    .grey.inline=' — '+mentor.email
+    %br
+    .inline=mentor.slot_string

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927163006) do
+ActiveRecord::Schema.define(version: 20150228225641) do
+
+  create_table "mentors", force: true do |t|
+    t.boolean  "active"
+    t.text     "name"
+    t.text     "phone"
+    t.text     "email"
+    t.integer  "weekday"
+    t.time     "start"
+    t.time     "end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "trainees", force: true do |t|
     t.text     "name"
@@ -35,6 +47,10 @@ ActiveRecord::Schema.define(version: 20140927163006) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "most_recent_email"
+    t.integer  "mentor_id"
+    t.boolean  "shadowed"
   end
+
+  add_index "trainees", ["mentor_id"], name: "index_trainees_on_mentor_id"
 
 end

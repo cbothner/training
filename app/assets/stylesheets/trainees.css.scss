@@ -9,6 +9,12 @@ input, textarea, select {
   margin-bottom: 0.8em;
 }
 
+input[type="radio"] {
+  width: auto;
+  margin-right: 1em;
+  display: inline;
+}
+
 textarea{
   height: 3em;
 }
@@ -49,5 +55,10 @@ textarea.tall{
   font-size: 15pt !important;
   font-weight: bold;
   padding-right: 0.5em;
+}
+.hilight {
+  color: #fff;
+  background-color: #72AB79;
+  padding: 0em 0.2em 0.1em 0.2em;
 }
 .hidden{ display:none; }
