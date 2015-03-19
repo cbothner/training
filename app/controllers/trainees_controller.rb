@@ -70,7 +70,7 @@ class TraineesController < ApplicationController
       @trainee.mentor = @mentor
       if @trainee.save
         flash[:notice] = 'Signed up to shadow!'
-        format.html { redirect_to controller: 'mentors', action: 'show' }
+        format.html { redirect_to controller: 'mentors', action: 'show', id: @mentor }
         format.json { render action: 'show', status: :created, location: @trainee }
       else
         format.html { render action: 'new' }

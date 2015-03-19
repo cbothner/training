@@ -16,5 +16,5 @@
     .inline=trainee.phone
     .inline=' — '+trainee.email
     .small.grey='Interests: '+trainee.interests
-    - shadow_link = trainee.mentor ? 'Show shadow' : 'Sign up to shadow'
-    =link_to shadow_link,  action: :find_shadow, id: trainee unless Mentor.available.empty?
+    - shadow_link = trainee.mentor ? "Shadow with #{trainee.mentor.name}" : 'Sign up to shadow'
+    =link_to shadow_link,  action: :find_shadow, id: trainee unless Mentor.available.empty? && trainee.mentor.nil?

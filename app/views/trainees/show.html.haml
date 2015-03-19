@@ -15,7 +15,8 @@
   .small.grey='Found out about WCBN through '+@trainee.referral
   .small="Radio Experience: #{@trainee.experience}"
   .small.grey=('Personal Statement: '+@trainee.statement) unless @trainee.statement.blank?
-  .small.padtop=(grey('Demo Tape Approval: ')+@trainee.demotape) unless @trainee.demotape.blank?
+  .small.padtop=(grey('Shadow: ') + link_to(@trainee.mentor.name, @trainee.mentor)) unless @trainee.mentor.nil?
+  .small=(grey('Demo Tape Approval: ')+@trainee.demotape) unless @trainee.demotape.blank?
   .small=(grey('Stage Two Training: ')+@trainee.stage2) unless @trainee.stage2.blank?
   .small=(grey('Freeform Apprenticeship No. 1: ')+@trainee.apprenticeship_freeform1) unless @trainee.apprenticeship_freeform1.blank?
   .small=(grey('Freeform Apprenticeship No. 2: ')+@trainee.apprenticeship_freeform2) unless @trainee.apprenticeship_freeform2.blank?
