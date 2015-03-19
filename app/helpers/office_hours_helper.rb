@@ -13,10 +13,12 @@ module OfficeHoursHelper
   # The hours will be displayed in the order they are given below: sort them by day
   # of the week.
   OFFICE_HOURS = [
-    {weekday: "Monday", start: "5PM", staffer: "Max"},
-    {weekday: "Wednesday", start: "3PM", staffer: "Kirsten"},
-    {weekday: "Wednesday", start: "7PM", staffer: "Karl"},
-    {weekday: "Thursday", start: "1PM", staffer: "Cameron"},
+    {weekday: "Monday", start: "1PM", staffer: "Ren"},
+    {weekday: "Monday", start: "5:30PM", staffer: "David"},
+    {weekday: "Tuesday", start: "1PM", staffer: "Lizzy"},
+    {weekday: "Wednesday", start: "12PM", staffer: "Shelby"},
+    {weekday: "Wednesday", start: "6PM", staffer: "Paul"},
+    {weekday: "Thursday", start: "6:45PM", staffer: "Marvin"},
     {weekday: "Friday", start: "2PM", staffer: "Kristin"},
   ]
 
