@@ -26,11 +26,11 @@ namespace :emails do
     end
   end
 
-  desc "Send one of each email to Cameron for testing."
+  desc "Send one of each email to training@wcbn.org for testing."
   task test: :environment do
     t = Trainee.new
-    t.email = "cbothner@umich.edu"
-    t.name = "Cameron Bothner"
+    t.email = "training@wcbn.org"
+    t.name = "WCBN Training"
     EMAILS.each do |i|
       TraineeMailer.scheduled( t, i ).deliver
     end
